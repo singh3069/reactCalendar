@@ -59,6 +59,13 @@ flex-grow: 1;
 flex-basis: 0;
 max-width: 100%;
 }
+
+.singleWeekCell{
+    display: flex;
+    justify-content: space-around;
+    color: black;
+    font-weight: 900;
+}
 /* Calendar */
 .calendar {
 display: block;

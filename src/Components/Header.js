@@ -22,6 +22,7 @@ function Header(props) {
             chevron_right
             </div>
         </div>
+        
         </div>
     );
     }

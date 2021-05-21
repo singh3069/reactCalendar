@@ -10,7 +10,7 @@ function NameOfWeeks(props) {
 
         for (let i = 0; i < 7; i++) {
         days.push(
-        <div className="column col-center" key={i}>
+        <div className="column col-center singleWeekCell" key={i}>
         {format(addDays(startDate, i), dateFormat)}
         </div>
         );
