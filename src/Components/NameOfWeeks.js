@@ -1,5 +1,6 @@
 import { startOfWeek, addDays, format } from "date-fns";
-import "../App.css";
+import "./style.css";
+
 
 
 function NameOfWeeks(props) {
@@ -8,16 +9,16 @@ function NameOfWeeks(props) {
     let startDate = startOfWeek(props.currentDate);
 
         for (let i = 0; i < 7; i++) {
-      days.push(
-         <div className="column col-center" key={i}>
-         {format(addDays(startDate, i), dateFormat)}
-         </div>
-      );
+        days.push(
+        <div className="column col-center" key={i}>
+        {format(addDays(startDate, i), dateFormat)}
+        </div>
+        );
    }
 
 
     return (
-        <div className="days row">
+        <div className="daysName row">
             {days}
         </div>
     )

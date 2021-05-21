@@ -1,6 +1,7 @@
 import React from "react";
 import { format } from "date-fns";
-import "../App.css";
+import "./style.css";
+
 
 function Header(props) {
 
