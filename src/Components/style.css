@@ -82,8 +82,27 @@ text-transform: uppercase;
 font-weight: 700;
 font-size: 115%;
 padding: 1.5em 0;
+display: flex;
 border-bottom: 1px solid lightgray;
+justify-content: space-between;
 }
+
+.headerButtonDiv {
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+    height: auto;
+    width: 15%;
+    gap: 10px;
+}
+
+.headerButtonDiv button{
+    cursor: pointer;
+    /* widht: 44px; */
+    width: 35%;
+}
+
+
 /* .calendar */
  /* .header  */
  .icon {

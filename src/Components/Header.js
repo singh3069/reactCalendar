@@ -8,22 +8,26 @@ function Header(props) {
     const dateFormat = "MMMM Y";
 
     return (
-        <div className="header row flex-middle">
+      <div className="header row flex-middle">
         <div className="column col-start">
-            <div className="icon" onClick={props.onClick.MonthMinusOne}>
+          <div className="icon" onClick={props.onClick.MonthMinusOne}>
             chevron_left
-            </div>
+          </div>
         </div>
         <div className="column col-center">
-            <span>{format(props.currentDate, dateFormat)}</span>
+          <span>{format(props.currentDate, dateFormat)}</span>
         </div>
         <div className="column col-end">
-            <div className="icon" onClick={props.onClick.MonthPlusOne}>
+          <div className="icon" onClick={props.onClick.MonthPlusOne}>
             chevron_right
-            </div>
+          </div>
         </div>
-        
+        <div className="headerButtonDiv">
+          <button>Month</button>
+          <button>Week</button>
+          <button>Day</button>
         </div>
+      </div>
     );
     }
 
