@@ -13,10 +13,11 @@ import {
   addDays,
   toDate
 } from "date-fns";
+import Modal from "./Modal";
 
 function DatesCell(props) {
         const [selectedDate, setSelectedDate] = useState(new Date());
-
+        const [showModal, setShowModal] = useState(false)
         const monthStart = startOfMonth(props.currentDate);
         const monthEnd = endOfMonth(monthStart);
         const startDate = startOfWeek(monthStart);
@@ -28,23 +29,31 @@ function DatesCell(props) {
         let formattedDate = "";
 
         const onDateClick = (day) => {
+        setShowModal(prev => !prev);
         setSelectedDate(day);
+        alert(day);
     };
+
         while (day <= endDate) {
         for (let i = 0; i < 7; i++) {
             formattedDate = format(day, dateFormat);
             const cloneDay = day;
             days.push(
-            <div
+              <div
                 className={`column cell  ${
-                !isSameMonth(day, monthStart) ? "disabled" : isSameDay(day, selectedDate)  ? "selected" : ""
+                  !isSameMonth(day, monthStart)
+                    ? "disabled"
+                    : isSameDay(day, selectedDate)
+                    ? "selected"
+                    : ""
                 }`}
                 key={day}
                 onClick={() => onDateClick(toDate(cloneDay))}
-            >
+              >
                 <span className="number">{formattedDate}</span>
                 <span className="bg">{formattedDate}</span>
-            </div>
+                {/* <span>Task</span> */}
+              </div>
             );
             day = addDays(day, 1);
         }
@@ -56,9 +65,14 @@ function DatesCell(props) {
         days = [];
         }
 
-        return (<div className="boody">
+        return (
+          <div className="boody">
             {rows}
-            </div>
+            <Modal
+              showModal={showModal}
+              setShowModal={setShowModal}
+            />
+          </div>
         );
 }
 
