@@ -28,10 +28,14 @@ function DatesCell(props) {
         let day = startDate;
         let formattedDate = "";
 
+        formattedDate = format(day, dateFormat);
+
         const onDateClick = (day) => {
         setShowModal(prev => !prev);
         setSelectedDate(day);
-        alert(day);
+        console.log(day);
+
+        // alert(formattedDate);
     };
 
         while (day <= endDate) {
@@ -56,6 +60,7 @@ function DatesCell(props) {
               </div>
             );
             day = addDays(day, 1);
+            // console.log();
         }
         rows.push(
             <div className="row" key={day}>

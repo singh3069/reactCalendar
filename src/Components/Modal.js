@@ -2,7 +2,7 @@ import React from 'react'
 import "./style.css";
 
 
-function Modal({ showModal, setShowModal,  }) {
+function Modal({ showModal, setShowModal }) {
   const closeModal = () => {
     setShowModal((prev) => !prev);
   };
@@ -11,11 +11,28 @@ function Modal({ showModal, setShowModal,  }) {
     <>
       {showModal ? (
         <div className="modalContainer">
+          <u>
+            <h1>Add Your Task </h1>
+          </u>
           <div className="container">
-            <h1>hello Modal</h1>
-            <h1>You want to add task on </h1>
-            <button>Add Task</button>
-            <button onClick={closeModal}>Cancel</button>
+            <p className="closeModal" onClick={closeModal}>
+              +
+            </p>
+            <input
+              type="text"
+              placeholder="Task Heading"
+              className="taskHeading"
+            ></input>
+            <textarea
+              className="taskText"
+              placeholder="Write in Detail"
+            ></textarea>
+            <div className="buttonDiv">
+              <button className="addTaskButton Button">Add Task</button>
+              <button onClick={closeModal} className="cancelTaskButton Button">
+                Cancel
+              </button>
+            </div>
           </div>
         </div>
       ) : null}

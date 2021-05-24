@@ -1,4 +1,5 @@
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
+/* @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700); */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap');
 @import url(https://fonts.googleapis.com/icon?family=Material+Icons);
 
 /* GENERAL */
@@ -9,7 +10,7 @@ box-sizing: border-box;
 }
 
 body {
-font-family: 'Open Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+font-family: 'Open Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif ,'Noto Serif', serif;
 font-size: 1em;
 font-weight: 300;
 line-height: 1.5;
@@ -227,11 +228,95 @@ width: calc(100%/7);
 .modalContainer{
     position: absolute;
     top: 12%;
-    left: 35%;
-    height: 500px;
-    width: 600px;
-    background-color: #1affa0;
+    left: 38%;
+    height: 550px;
+    width: 500px;
+    background-color: white;
     border: 2px solid black;
     color: black;
-    box-shadow: 0px 0px 6px 6px #1affa0;
+    box-shadow: 0px 0px 8px 6px grey;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.modalContainer h1 {
+    text-align: center;
+}
+
+.container{
+    height: 90%;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 0px;
+}
+
+
+
+.taskText{
+    /* margin: auto 35px; */
+    height: 120px;
+    width: 90%;
+    border-radius: 12px;
+    display: flex;
+    text-align: center;
+    font-size: 30px;
+}
+
+.taskText:focus-visible {
+  outline: none;
+}
+
+.taskHeading{
+    /* margin: auto 35px; */
+    height: 50px;
+    width: 90%;
+    border-radius: 12px;
+    display: flex;
+    text-align: center;
+    font-size: 20px;
+}
+
+.taskHeading:focus-visible {
+  outline: none;
+}
+
+.closeModal{
+    position: absolute;
+    top: -15px;
+    right: 0px;
+    font-size: 30px;
+    font-weight: 600;
+    transform: rotate(45deg);
+    cursor: pointer;
+}
+
+.Button{
+    height: 35px;
+    width: 90px;
+    cursor: pointer;
+    border-radius: 8px;
+    border: none;
+    box-sizing: border-box;
+    box-shadow: 0px 1px 2px 1px grey;
+}
+
+.buttonDiv{
+    display: flex;
+    width: 50%;
+    justify-content: space-between;
+}
+
+.addTaskButton:hover{
+    background-color: #1affa0;
+    color: black;
+}
+
+.cancelTaskButton:hover{
+    background-color: rgb(250, 4, 4);
+    color: black;
 }
